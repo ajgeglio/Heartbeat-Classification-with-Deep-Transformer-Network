@@ -1,10 +1,13 @@
-# The performance of statistical machine learning methods in the classification and diagnosis of time-series heart sounds
+# The performance of machine learning methods in the classification and diagnosis of time-series heart sounds
 ### Tony Geglio | M.S. Data Science
 ### Michigan Technological University
 
 
 # 1. Introduction to the project
-In my research, I am focused on audio processing for classification and spatial analysis. One way this could be extended to the health community is in the diagnosis of cardiovascular abnormalities through analyzing the heart sounds. 
+Cardiac sound signal classification is an important area of research in cardiology that aims to accurately identify abnormal heart sounds, which can be indicative of various cardiac disorders. Accurate classification of cardiac sound signals is essential for making timely and accurate diagnoses, and for developing effective treatment plans. However, current methods for analyzing and classifying cardiac sound signals have several limitations and challenges.
+
+One potential solution to these challenges is the use of artificial intelligence (AI), machine learning (ML), and deep learning (DL) techniques, which have shown promise in improving the accuracy and reliability of sound analysis for cardiac sound signal classification. The limitations and challenges of current methods for cardiac sound signal classification include the subjectivity of human interpretation, which can lead to variability in diagnoses, and the lack of standardization in terminology and classification schemes. In addition, traditional signal processing techniques may not be effective for capturing subtle differences in sound patterns that are indicative of cardiac disorders.
+
 
 ## Problems to Solve
 Currently, patients with cardiovascular disease have tools for monitoring their heart, however early diagnosis of heart problems is still difficult. The proposal here is: through very inexpensive microphone recorders connected to a human body and communicating data with a smartphone could provide continuous analysis to people with heart problems, and send alerts, rather than requiring the patient to perform a measurement and then react. This project goal is to test machine learning approaches that could be implemented in heart sound classification tools.
