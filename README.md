@@ -80,6 +80,52 @@ Data Augmentation is performed in the python file called “WavPreprocess-Hearbe
 |murmur 	 |  6 | 112| 44 |
 |normal	   | 50 | 38 |412 |
 
+## Set A with MLP
+MLPClassifier(activation='logistic', alpha=0.01, hidden_layer_sizes=(40, 20),
+              max_iter=500)
+
+[x] performance for MLP classifier
+|                 |precision  |  recall|  f1-score| support |
+|-----------------|-----------|--------|----------|---------|
+|    artifact     |  1.00     | 1.00   |   1.00   |    767  |
+|    extrahls     |  0.91     | 0.99   |   0.95   |     86  |
+|      murmur     |  0.99     | 0.96   |   0.97   |    303  |
+|      normal     |  0.96     | 0.96   |   0.96   |    204  |
+|-----------------|-----------|--------|----------|---------|
+|    accuracy     |           |        |   0.98   |   1360  |
+|   macro avg     |  0.96     | 0.98   |   0.97   |   1360  |
+| weighted avg    |  0.98     | 0.98   |   0.98   |   1360  |
+
+|           |artifact   |extrahls|  murmur | normal  | 
+|-----------|-----------|--------|---------|---------|  
+|artifact   | 767       | 0      | 0       |0        |
+| extrahls  | 0         | 85     | 0       |1        |
+|murmur     | 0         | 3      | 292     |8        |
+|normal     | 0         | 5      | 4       |195      |
+
+TOTAL TIME: 1155.32
+
+## Set B with MLP
+MLPClassifier(activation='logistic', alpha=0.01, hidden_layer_sizes=(40, 20),
+              max_iter=500)
+
+[x] performance for MLP classifier
+|                 |precision  |  recall|  f1-score| support |
+|-----------------|-----------|--------|----------|---------|
+|  extrastole     |  0.51     | 0.65   |   0.57   |    100  |
+|      murmur     |  0.61     | 0.75   |   0.67   |    146  |
+|      normal     |  0.87     | 0.76   |   0.81   |    450  |
+|-----------------|-----------|--------|----------|---------|
+|    accuracy     |           |        |   0.74   |    696  |
+|   macro avg     |  0.66     | 0.72   |   0.68   |    696  |
+| weighted avg    |  0.77     | 0.74   |   0.75   |    696  |
+
+|                 |extrastole | murmur |  normal  | 
+|-----------------|-----------|--------|----------|
+|extrastole       |65         |  13    | 22       |
+|murmur           |10         | 109    | 27       | 
+|normal           |53         | 57     | 340      |
+
 ## Random Forests
 
 Best Model:
