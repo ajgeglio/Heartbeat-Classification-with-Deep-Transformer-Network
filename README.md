@@ -37,8 +37,41 @@ Set B has a total of 464 recordings
 
 Data Augmentation is performed in the python file called “WavPreprocess-Hearbeat.py”. The augmentation method generates 0.55 second samples from the recordings. Each sample’s “origin” was located using the numpy “find peaks” function. Note there is sample overlap which creates one form of oversampling. I also oversampled using built-in functions for hugging face datasets called “interleave” which generates a class balance. See the figure visualizing the samples 5 and 6 taken from a set B recording. A total of ten beats were detected in this file, so in this case, a 3.5 second recording generates 10 samples totaling 5.5 seconds of data. The augmentation outputs an audio (.wav) file for each sample.
 
+### Set A after Augmentation & Oversampling
+DatasetDict 
 
+    train: Dataset({
+        features: ['audio', 'label'],
+        num_rows: 15904
+    })
 
+    validation: Dataset({
+        features: ['audio', 'label'],
+        num_rows: 1662
+    })
+
+    test: Dataset({
+        features: ['audio', 'label'],
+        num_rows: 1360
+    })
+
+### Set B after Augmentation & Oversampling
+DatasetDict
+
+    train: Dataset({
+        features: ['audio', 'label'],
+        num_rows: 6990
+    })
+
+    validation: Dataset({
+        features: ['audio', 'label'],
+        num_rows: 849
+    })
+
+    test: Dataset({
+        features: ['audio', 'label'],
+        num_rows: 696
+    })
 
 # 4. Results
 
@@ -74,11 +107,11 @@ Data Augmentation is performed in the python file called “WavPreprocess-Hearbe
 |   macro avg     |  0.65     | 0.63   |   0.64   |    773  |
 | weighted avg    |  0.73     | 0.73   |   0.73   |    773  |
 
-|          | extrastole | murmur | normal |   
+|          | extrastole | murmur   | normal |   
 |----------|------------|----------|--------|
-|extrastole| 43 |  7 | 61 |
-|murmur 	 |  6 | 112| 44 |
-|normal	   | 50 | 38 |412 |
+|extrastole| 43         |  7       | 61     |
+|murmur    |  6         | 112      | 44     |
+|normal	   | 50         | 38       |412     |
 
 ## Set A with MLP
 MLPClassifier(activation='logistic', alpha=0.01, hidden_layer_sizes=(40, 20),
@@ -125,6 +158,10 @@ MLPClassifier(activation='logistic', alpha=0.01, hidden_layer_sizes=(40, 20),
 |extrastole       |65         |  13    | 22       |
 |murmur           |10         | 109    | 27       | 
 |normal           |53         | 57     | 340      |
+
+TOTAL TIME: 244.53
+
+# Combined datasets for 5-class classification (No Augmentation)
 
 ## Random Forests
 
